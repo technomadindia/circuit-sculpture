@@ -6,8 +6,8 @@
 
   (title_block
     (title "Glowing Sunflower")
-    (date "2023-09-20")
-    (rev "1.0")
+    (date "2023-09-21")
+    (rev "1.2")
     (company "www.technomad.in")
   )
 
@@ -1039,7 +1039,7 @@
     (property "Reference" "R9" (at 152.4 62.23 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "150E" (at 152.4 64.77 0)
+    (property "Value" "750E" (at 152.4 64.77 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (at 150.876 63.754 90)
