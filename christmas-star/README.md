@@ -1,8 +1,9 @@
 # Christmas Star
 
-Decorative ornament built using red/green LEDs and an IC 555 timer based alternating blinker circuit.
+Decorative Christmas ornament built using red/green LEDs and an IC 555 timer based alternating blinker circuit.
 
 ## Video
+https://youtu.be/6iKLjG4pp_g
 
 ## Schematic
 Created using KiCad 7.x (https://www.kicad.org/)
@@ -10,6 +11,12 @@ Created using KiCad 7.x (https://www.kicad.org/)
 ![Christmas Star](/christmas-star/christmas-star.png)
 
 ## Circuit Logic
+The circuit is an Astable Multivibrator designed around the IC 555 timer (kindly refer to NE555/LM555/SE555 datasheet) with square wave output at pin 3.
+
+In the default configuration the duty cycle (ratio of output HIGH time vs LOW time) is unequal. This is due to the fact that the capacitor C2 charges via resistors R3 and R4, but discharges only via R4. To balance that out we implement a minor tweak by adding the Diode D13, which largely bypasses R4 while charging. In the resulting circuit the HIGH time tH = 0.8R3C2, and LOW time tL = 0.7R4C2. Therefore with an appropriate ratio of R3 and R4, we can get an improved performance with close to 50% duty cycle.
+
+We use six Red LEDs as D1 thru D6, and six Green LEDs as D7 thru D12. When the output at pin 3 is HIGH, the Green LEDs light up, and when it's LOW, the Red ones do. Note that we are directly driving the LEDs from the pin 3 of IC 555. This is possible because the maximum rated current source/sink is at 200mA. With limiting resistors R1/R2 of 22 Ohms, each LED draws approximately 25mA making the total maximum current draw at any given time at 150mA.
+The circuit is powered by a 5V DC source via a barrel jack connector.
 
 ## Bill of Materials
 
